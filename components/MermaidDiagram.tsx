@@ -56,7 +56,7 @@ export const MermaidDiagram: React.FC<MermaidDiagramProps> = ({ selectedTable })
         // Remove previous highlights
         svg.querySelectorAll('.highlighted-entity').forEach(el => {
           el.classList.remove('highlighted-entity');
-          el.style.filter = 'none';
+          (el as HTMLElement).style.filter = 'none';
         });
 
         // Find and highlight the table matching the selectedTable name
@@ -73,7 +73,7 @@ export const MermaidDiagram: React.FC<MermaidDiagramProps> = ({ selectedTable })
             
             if (parent) {
               parent.classList.add('highlighted-entity');
-              parent.style.filter = 'drop-shadow(0 0 10px #0070f3) drop-shadow(0 0 20px rgba(0, 112, 243, 0.8))';
+              (parent as HTMLElement).style.filter = 'drop-shadow(0 0 10px #0070f3) drop-shadow(0 0 20px rgba(0, 112, 243, 0.8))';
             }
           }
         });
