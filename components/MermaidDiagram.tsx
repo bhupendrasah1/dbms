@@ -67,7 +67,7 @@ export const MermaidDiagram: React.FC<MermaidDiagramProps> = ({ selectedTable })
           if (el.textContent?.trim() === tableNameUpper) {
             // Find parent entity box
             let parent = el.parentElement;
-            while (parent && !parent.className.baseVal?.includes('entityBox')) {
+            while (parent && !parent.classList.contains('entityBox')) {
               parent = parent.parentElement;
             }
             
